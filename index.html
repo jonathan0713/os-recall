@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#f5f4ef"><meta name="description" content="作業系統示範記憶卡。主動回想、答題回饋、間隔複習。">
+<title>OS Recall — 作業系統記憶卡</title>
+<link rel="icon" href="icon.svg" type="image/svg+xml"><link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app-shell">
+<aside class="sidebar" id="sidebar">
+<a class="brand" href="#" aria-label="OS Recall 首頁"><span class="brand-icon">o<span>s</span></span><span>OS <b>Recall</b><small>把觀念，變成直覺。</small></span></a>
+<div class="course-label"><span class="status-dot"></span> 作業系統複習</div>
+<nav class="main-nav" aria-label="主要功能"><button data-view="decks" class="nav-item active"><span>▦</span> 牌組 <span class="nav-end">01</span></button><button data-view="library" class="nav-item"><span>▤</span> 瀏覽卡片 <span id="nav-total" class="nav-end">6</span></button><button data-view="progress" class="nav-item"><span>◴</span> 統計</button></nav>
+<div class="side-heading">CHAPTERS <span>依主題複習</span></div><div id="chapter-list"></div>
+<div class="side-bottom"><button class="text-button" id="about-btn">來源與使用說明 ↗</button></div>
+</aside>
+<div class="main-shell">
+<header class="topbar"><button id="menu-btn" class="icon-button mobile-only" aria-label="開啟選單" aria-expanded="false">☰</button><div class="breadcrumb">學習工作台 <span>/</span> <b id="crumb">記憶練習</b></div><div class="top-right"><span class="save-status" id="save-status"><i></i> 進度儲存於此裝置</span><button id="font-size-btn" class="font-size-button" aria-label="調整字級" title="調整字級">Aa <span>字級</span></button><button id="export-btn" class="icon-button" aria-label="匯出學習進度" title="匯出學習進度">↥</button></div></header>
+<main id="main" tabindex="-1"></main>
+<footer class="page-footer"><span>OS RECALL <i>／</i> 每次回想，都比重讀更靠近記住。</span><button class="text-button" id="footer-help">使用方式</button></footer>
+</div></div>
+<div id="shade" hidden></div><div id="toast" class="toast" role="status" aria-live="polite"></div>
+<dialog id="modal"><div class="modal-top"><span class="eyebrow">OS RECALL / NOTES</span><button id="close-modal" class="icon-button" aria-label="關閉說明">✕</button></div><div id="modal-body"></div></dialog>
+<input type="file" id="import-input" accept="application/json,.json" hidden>
+<script src="cards-data.js"></script><script src="engine.js"></script><script src="app.js"></script>
+</body></html>
